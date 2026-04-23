@@ -20,6 +20,13 @@ export default function AppPage() {
   const { user } = useStore()
   const didInit = useRef(false)
 
+  // Auto-open sidebar on desktop
+  useEffect(() => {
+    if (window.innerWidth >= 768) {
+      useStore.getState().setSidebarOpen(true)
+    }
+  }, [])
+
   // Hydrate user from JWT if Zustand was cleared (e.g. hard refresh)
   useEffect(() => {
     if (!user) {

@@ -113,7 +113,7 @@ export const useStore = create<Store>()(
         set((s) => ({ sessions: s.sessions.map((x) => (x.id === id ? { ...x, title } : x)) })),
 
       // UI
-      sidebarOpen: true,
+      sidebarOpen: false,
       setSidebarOpen: (sidebarOpen) => set({ sidebarOpen }),
 
       // Preferences
